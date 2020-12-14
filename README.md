@@ -29,6 +29,6 @@ The second thing is way to display the results. We don't really have a lot to sa
 ### Nice-to-have features
 - deploy your app using a hosting provider you did not use before.
 
-![go live!](https://github.com/Shticrina)
+***github page:***  https://shticrina.github.io/css-animation-drill/
 
-[comment]: <> (![my gif!](https://media.giphy.com/media/ckJF143W1gBS8Hk833/giphy.gif))
+***go live:***  http://cristina-animation-challenge.tk/
