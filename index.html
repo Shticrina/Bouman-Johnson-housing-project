@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Cristina API Sprint</title>
+
+    <!-- Font awesome -->
+	<script src="https://kit.fontawesome.com/2d566fa444.js" crossorigin="anonymous"></script>
+
+    <!-- Google fonts -->
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600;1,700&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap CDN -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+    <!-- add chart.js -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.css" integrity="sha512-/zs32ZEJh+/EO2N1b0PEdoA10JkdC3zJ8L5FTiQu82LR9S/rOQNfQN7U59U9BC12swNeRAz3HSzIL2vpp4fv3w==" crossorigin="anonymous" />
+
+    <!-- Styles -->
+    <link rel="stylesheet" type="text/css" href="https://yarnpkg.com/en/package/normalize.css">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+    <header id="myheader" class="py-3 text-center text-info">
+        <h2 class="">Data Visualisation using Immo Elisa API</h2>
+    </header>
+
+    <div class="container-fluid d-flex justify-content-center py-5">
+        <div class="col-8 mx-auto">
+            <h4 class="text-info text-center mb-2">Api form</h4>
+            <hr class="bg-info w-50">
+
+            <form action="" method="post" class="pt-3" id="apiForm">
+                <div class="d-flex justify-content-between mb-4">
+                    <div class="form-group flex-fill col-6 pl-0">
+                        <label for="area">Area:</label>
+                        <input type="number" class="form-control" name="area" min="1" required>
+                    </div>
+
+                    <div class="form-group flex-fill">
+                        <label for="property-type">Property type:</label>
+                        <select class="custom-select" name="property-type" max="30" required>
+                            <option value="">Please choose the type</option>
+                            <option value="APARTMENT">APARTMENT</option>
+                            <option value="HOUSE">HOUSE</option>
+                            <option value="OTHERS">OTHERS</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="d-flex justify-content-between mb-4">
+                    <div class="form-group flex-fill">
+                        <label for="rooms-number">Rooms number:</label>
+                        <input type="number" class="form-control" name="rooms-number" min="1" max="8" required>
+                    </div>
+
+                    <div class="form-group flex-fill col-4">
+                        <label for="zip-code">Zip code:</label>
+                        <input type="number" class="form-control" name="zip-code" min="1000" max="9999" required>
+                    </div>
+
+                    <div class="form-group flex-fill">
+                        <label for="land-area">Land area:</label>
+                        <input type="number" class="form-control" name="land-area" min="1">
+                    </div>
+                </div>
+
+                <div class="d-flex justify-content-between mb-4">
+                    <div class="form-group flex-fill col-4 px-0">
+                        <label for="equipped-kitchen">Equipped kitchen:</label>
+
+                        <div class="d-flex justify-content-start">
+                            <label class="mr-3 text-dark">
+                                <input type="radio" class="mr-2" name="equipped-kitchen">Yes
+                            </label>
+                        
+                            <label class="text-dark">
+                                <input type="radio" class="mr-2" name="equipped-kitchen" checked>No
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-group flex-fill col-4">
+                        <label for="garden">Garden:</label>
+
+                        <div class="d-flex justify-content-start">
+                            <label class="mr-3 text-dark">
+                                <input type="radio" class="mr-2" name="garden">Yes
+                            </label>
+
+                            <label class="text-dark">
+                                <input type="radio" class="mr-2" name="garden" checked>No
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-group flex-fill">
+                        <label for="garden-area">Garden area:</label>
+                        <input type="number" class="form-control" name="garden-area" min="1" >
+                    </div>
+                </div>
+
+                <div class="d-flex justify-content-between mb-4">
+                    <div class="form-group flex-fill col-3 pl-0">
+                        <label for="swimmingpool">Swimmingpool:</label>
+
+                        <div class="d-flex justify-content-start">
+                            <label class="mr-3 text-dark">
+                                <input type="radio" class="mr-2" name="swimmingpool">Yes
+                            </label>
+                       
+                            <label class="text-dark">
+                                <input type="radio" class="mr-2" name="swimmingpool" checked>No
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-group flex-fill col-3">
+                        <label for="furnished">Furnished:</label>
+
+                        <div class="d-flex justify-content-start">
+                            <label class="mr-3 text-dark">
+                                <input type="radio" class="mr-2" name="furnished">Yes
+                            </label>
+                        
+                            <label class="text-dark">
+                                <input type="radio" class="mr-2" name="furnished" checked>No
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-group flex-fill col-3">
+                        <label for="open-fire">Open fire:</label>
+
+                        <div class="d-flex justify-content-start">
+                            <label class="mr-3 text-dark">
+                                <input type="radio" class="mr-2" name="open-fire">Yes
+                            </label>
+                       
+                            <label class="text-dark">
+                                <input type="radio" class="mr-2" name="open-fire" checked>No
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-group flex-fill">
+                        <label for="garden">Terrace:</label>
+
+                        <div class="d-flex justify-content-start">
+                            <label class="mr-3 text-dark">
+                                <input type="radio" class="mr-2" name="terrace">Yes
+                            </label>
+                        
+                            <label class="text-dark">
+                                <input type="radio" class="mr-2" name="terrace" checked>No
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="d-flex justify-content-between mb-4">
+                    <div class="form-group flex-fill col-4 px-0">
+                        <label for="terrace-area">Terrace area:</label>
+                        <input type="number" class="form-control" name="terrace-area" min="1">
+                    </div>
+
+                    <div class="form-group flex-fill col-4">
+                        <label for="facades-number">Facades number:</label>
+                        <input type="number" class="form-control" name="facades-number" min="1">
+                    </div>
+
+                    <div class="form-group flex-fill">
+                        <label for="building-state">Building state:</label>
+                        <select class="custom-select" name="building-state" max="30">
+                            <option value="">Please choose the type</option>
+                            <option value="NEW">NEW</option>
+                            <option value="GOOD">GOOD</option>
+                            <option value="TO RENOVATE">TO RENOVATE</option>
+                            <option value="JUST RENOVATED">JUST RENOVATED</option>
+                            <option value="TO REBUILD">TO REBUILD</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group text-right">
+                    <button type="submit" class="btn btn-info btn-block" name="submitBtn" id="submitBtn">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <footer id="myfooter" class="text-center text-secondary py-3">
+        <p class="mb-0">Becode &copy; 2020 &#65372; <a href="https://github.com/Shticrina" class="text-light">cristina</a></p>
+    </footer>
+
+    <!-- Bootstrap files -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+
+    <script src="./js/api.js"></script>
+</body>
+</html>
