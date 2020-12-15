@@ -31,6 +31,6 @@ The second thing is way to display the results. We don't really have a lot to sa
 
 #
 
-***github page:***  https://shticrina.github.io/Bouman-Johnson-housing-project/
+[***github page:***](https://shticrina.github.io/Bouman-Johnson-housing-project/)
 
-***go live:***  http://cristina-animation-challenge.tk/
+[***go live:***](http://bouman-johnson-api.great-site.net/)
