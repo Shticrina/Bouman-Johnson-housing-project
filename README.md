@@ -30,7 +30,7 @@ The second thing is way to display the results. We don't really have a lot to sa
 - deploy your app using a hosting provider you did not use before.
 
 #
+### See the website
+[***github page***](https://shticrina.github.io/Bouman-Johnson-housing-project/)
 
-[***github page:***](https://shticrina.github.io/Bouman-Johnson-housing-project/)
-
-[***go live:***](http://bouman-johnson-api.great-site.net/)
+[***go live***](http://bouman-johnson-api.great-site.net/)
