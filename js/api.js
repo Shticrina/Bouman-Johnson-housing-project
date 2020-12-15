@@ -13,19 +13,12 @@ let formData = {
 };
 
 let jsonFormData = JSON.stringify(formData);
+document.getElementById('result').classList.add('d-none');
 
 // Define headers
 var myHeaders = new Headers({
     'Content-Type': 'application/json'
 });
-
-// Post example
-fetch(`http://roberta-eliza-cors.herokuapp.com/predict`, { method: 'POST', headers: myHeaders, body: jsonFormData })
-	.then((response) => response.json())
-	.then((data) => {
-		console.log(data);
-	})
-	.catch(error => {console.error(error)});
 
 document.getElementById('submitBtn').addEventListener('click', function(event) {
 	event.preventDefault();
@@ -57,7 +50,7 @@ document.getElementById('submitBtn').addEventListener('click', function(event) {
 			"garden": gardenValue,
 			"garden-area": gardenAreaValue,
 			"equipped-kitchen": equippedKitchenValue,
-			"full-address": '',
+			// "full-address": '',
 			"swimmingpool": swimmingpoolValue,
 			"furnished": furnishedValue,
 			"open-fire": openFireValue,
@@ -67,5 +60,15 @@ document.getElementById('submitBtn').addEventListener('click', function(event) {
 			"building-state": buildingStateValue
 		}
 	};
-	console.log(formData);
+	// console.log(formData);
+
+	fetch(`http://roberta-eliza-cors.herokuapp.com/predict`, { method: 'POST', headers: myHeaders, body: JSON.stringify(formData) })
+	.then((response) => response.json())
+	.then((data) => {
+		console.log(data);
+		document.getElementById('result').classList.remove('d-none');
+		document.getElementById('price').innerHTML = data.prediction.price;
+
+	})
+	.catch(error => {console.error(error)});
 });

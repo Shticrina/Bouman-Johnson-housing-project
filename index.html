@@ -36,14 +36,14 @@
             <form action="" method="post" class="pt-3" id="apiForm">
                 <div class="d-flex justify-content-between mb-4">
                     <div class="form-group flex-fill col-6 pl-0">
-                        <label for="area">Area:</label>
-                        <input type="number" class="form-control" name="area" min="1" required>
+                        <label for="area">Area*:</label>
+                        <input type="number" class="form-control" name="area" min="10" value="10">
                     </div>
 
                     <div class="form-group flex-fill">
-                        <label for="property-type">Property type:</label>
-                        <select class="custom-select" name="property-type" max="30" required>
-                            <option value="">Please choose the type</option>
+                        <label for="property-type">Property type*:</label>
+                        <select class="custom-select" name="property-type" required>
+                            <!-- <option value="">Please choose the type</option> -->
                             <option value="APARTMENT">APARTMENT</option>
                             <option value="HOUSE">HOUSE</option>
                             <option value="OTHERS">OTHERS</option>
@@ -53,18 +53,18 @@
 
                 <div class="d-flex justify-content-between mb-4">
                     <div class="form-group flex-fill">
-                        <label for="rooms-number">Rooms number:</label>
-                        <input type="number" class="form-control" name="rooms-number" min="1" max="8" required>
+                        <label for="rooms-number">Rooms number*:</label>
+                        <input type="number" class="form-control" name="rooms-number" min="1" max="8" value="1">
                     </div>
 
                     <div class="form-group flex-fill col-4">
-                        <label for="zip-code">Zip code:</label>
-                        <input type="number" class="form-control" name="zip-code" min="1000" max="9999" required>
+                        <label for="zip-code">Zip code*:</label>
+                        <input type="number" class="form-control" name="zip-code" min="1000" max="9999" value="1000">
                     </div>
 
                     <div class="form-group flex-fill">
                         <label for="land-area">Land area:</label>
-                        <input type="number" class="form-control" name="land-area" min="1">
+                        <input type="number" class="form-control" name="land-area" min="1" value="1">
                     </div>
                 </div>
 
@@ -99,7 +99,7 @@
 
                     <div class="form-group flex-fill">
                         <label for="garden-area">Garden area:</label>
-                        <input type="number" class="form-control" name="garden-area" min="1" >
+                        <input type="number" class="form-control" name="garden-area" min="1" value="1">
                     </div>
                 </div>
 
@@ -164,18 +164,18 @@
                 <div class="d-flex justify-content-between mb-4">
                     <div class="form-group flex-fill col-4 px-0">
                         <label for="terrace-area">Terrace area:</label>
-                        <input type="number" class="form-control" name="terrace-area" min="1">
+                        <input type="number" class="form-control" name="terrace-area" min="1" value="1">
                     </div>
 
                     <div class="form-group flex-fill col-4">
                         <label for="facades-number">Facades number:</label>
-                        <input type="number" class="form-control" name="facades-number" min="1">
+                        <input type="number" class="form-control" name="facades-number" min="1" value="1">
                     </div>
 
                     <div class="form-group flex-fill">
                         <label for="building-state">Building state:</label>
                         <select class="custom-select" name="building-state" max="30">
-                            <option value="">Please choose the type</option>
+                            <!-- <option value="">Please choose the type</option> -->
                             <option value="NEW">NEW</option>
                             <option value="GOOD">GOOD</option>
                             <option value="TO RENOVATE">TO RENOVATE</option>
@@ -189,6 +189,12 @@
                     <button type="submit" class="btn btn-info btn-block" name="submitBtn" id="submitBtn">Submit</button>
                 </div>
             </form>
+        </div>
+    </div>
+
+    <div class="container-fluid d-flex justify-content-center text-light py-5 d-none" id="result">
+        <div class="col-8 mx-auto d-flex justify-content-center">
+            <p class="">Price: <span id="price" class="text-danger">0</span></p>
         </div>
     </div>
 

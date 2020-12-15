@@ -23,7 +23,7 @@ a:hover {
 }
 
 /* Style Header */
-#myheader {
+#myheader, #result {
 	background-color: #024c62;
 }
 
@@ -33,19 +33,8 @@ a:hover {
 	letter-spacing: 5px;
 }
 
-.content-body {
-	background-color: #fff;
-}
-
-#catsTable table thead tr {
-    background-color: #ccc;
-}
-
-.cat-image {
-	width: 200px;
-	overflow: hidden;
-	position: relative;
-	height: 160px;
+#price {
+	font-size: 32px;
 }
 
 /* Style Footer */
