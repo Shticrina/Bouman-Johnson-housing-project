@@ -29,8 +29,8 @@ The second thing is way to display the results. We don't really have a lot to sa
 ### Nice-to-have features
 - deploy your app using a hosting provider you did not use before.
 
+#
 
-
-***github page:***  https://shticrina.github.io/css-animation-drill/
+***github page:***  https://shticrina.github.io/Bouman-Johnson-housing-project/
 
 ***go live:***  http://cristina-animation-challenge.tk/
