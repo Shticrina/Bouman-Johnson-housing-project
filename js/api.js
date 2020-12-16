@@ -1,4 +1,5 @@
-let formData = {
+// Test the API
+/*let formData = {
 	data: {
 		"area": 90,
 	    "property-type": "APARTMENT",
@@ -12,17 +13,22 @@ let formData = {
 	}
 };
 
-let jsonFormData = JSON.stringify(formData);
-document.getElementById('result').classList.add('d-none');
+let jsonFormData = JSON.stringify(formData);*/
+
+// document.getElementById('result').style.display = "none";
+var loader = document.getElementById('loader');
 
 // Define headers
 var myHeaders = new Headers({
     'Content-Type': 'application/json'
 });
 
-document.getElementById('submitBtn').addEventListener('click', function(event) {
+document.getElementById('submitBtn').addEventListener('click', async function(event) {
 	event.preventDefault();
-	console.log('it works');
+	// console.log('it works');
+
+	// Waiting for the API response
+	loader.style.display = 'block';
 
 	let areaValue = document.getElementsByName("area")[0].value;
 	let propertyTypeValue = document.getElementsByName("property-type")[0].value;
@@ -62,13 +68,20 @@ document.getElementById('submitBtn').addEventListener('click', function(event) {
 	};
 	// console.log(formData);
 
-	fetch(`http://roberta-eliza-cors.herokuapp.com/predict`, { method: 'POST', headers: myHeaders, body: JSON.stringify(formData) })
+	await fetch(`http://roberta-eliza-cors.herokuapp.com/predict`, { 
+		method: 'POST', 
+		headers: myHeaders, 
+		body: JSON.stringify(formData) 
+	})
 	.then((response) => response.json())
 	.then((data) => {
 		console.log(data);
-		document.getElementById('result').classList.remove('d-none');
-		document.getElementById('price').innerHTML = data.prediction.price;
+		let price = parseInt(data.prediction.price);
 
+		// Once we have the response => hide the loader & show the data
+		loader.style.display = 'none';
+		document.getElementById('result').classList.remove('d-none');
+		document.getElementById('price').innerHTML = price.toFixed(2);
 	})
 	.catch(error => {console.error(error)});
 });
