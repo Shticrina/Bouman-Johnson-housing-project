@@ -32,5 +32,3 @@ The second thing is way to display the results. We don't really have a lot to sa
 #
 ### See the website
 [***github page***](https://shticrina.github.io/Bouman-Johnson-housing-project/)
-
-[***go live***](http://bouman-johnson-api.great-site.net/)
